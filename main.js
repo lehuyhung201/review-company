@@ -42,4 +42,35 @@ $(document).ready(function () {
       alert("Không thể tải dữ liệu từ API.");
     },
   });
+
+  // Hàm sắp xếp
+  function sortTable(table, column, order) {
+    const rows = $(table).find("tbody tr").get();
+
+    rows.sort((a, b) => {
+      const valA = $(a).children("td").eq(column).text().toUpperCase();
+      const valB = $(b).children("td").eq(column).text().toUpperCase();
+
+      if (valA < valB) return order === "asc" ? -1 : 1;
+      if (valA > valB) return order === "asc" ? 1 : -1;
+      return 0;
+    });
+
+    $.each(rows, function (index, row) {
+      $(table).children("tbody").append(row);
+    });
+  }
+
+  // Lắng nghe sự kiện click vào nút sort
+  $(".sort-btn").on("click", function () {
+    const column = $(this).data("column"); // Lấy cột cần sort
+    const order = $(this).data("order"); // Lấy thứ tự hiện tại (asc hoặc desc)
+
+    // Đổi thứ tự (toggle)
+    const newOrder = order === "asc" ? "desc" : "asc";
+    $(this).data("order", newOrder);
+
+    // Sắp xếp bảng
+    sortTable("table", column, newOrder);
+  });
 });

@@ -1,12 +1,36 @@
 table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  position: sticky;
+  top: -1px; /* Cố định ở đầu bảng */
+  background-color: #7b7c7c; /* Màu nền tiêu đề */
+  z-index: 2; /* Đảm bảo th luôn nằm trên các nội dung khác */
+  text-align: center;
+  border: 1px solid #ddd; /* Viền bảng */
+}
+
+td {
+  border: 1px solid #ddd; /* Viền bảng */
+  text-align: center;
+  padding: 8px;
+}
+
+.sort-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  padding: 0;
+  font-size: 14px;
+}
+
+.sort-btn:hover {
+  text-decoration: underline;
+}
+
+iconify-icon {
+    color: white;
+}
