@@ -32,5 +32,28 @@ td {
 }
 
 iconify-icon {
-    color: white;
+  color: white;
 }
+
+/* Tùy chỉnh kích thước từng cột */
+th:nth-child(1) {
+  width: 5%;
+} /* STT */
+th:nth-child(2) {
+  width: 5%;
+} /* Tên công ty */
+th:nth-child(3) {
+  width: 15%;
+} /* Địa chỉ */
+th:nth-child(4) {
+  width: 10%;
+} /* Vùng/ miền */
+th:nth-child(5) {
+  width: 40%;
+} /* Nhược điểm */
+th:nth-child(6) {
+  width: 10%;
+} /* Khuyên bảo */
+th:nth-child(7) {
+  width: 10%;
+} /* Ưu điểm */
